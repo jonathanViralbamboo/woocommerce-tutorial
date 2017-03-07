@@ -17,6 +17,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
+// remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display', 10 );
+// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
