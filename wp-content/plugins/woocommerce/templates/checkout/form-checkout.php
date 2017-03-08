@@ -22,6 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wc_print_notices();
 
+// global $wp_filter;
+// var_export( $wp_filter['woocommerce_before_checkout_form']);
+
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
 // If checkout registration is disabled and not logged in, the user cannot checkout
@@ -40,6 +43,10 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 
 		<div class="col2-set" id="customer_details">
 			<div class="col-1">
+				<!-- <?php
+					global $wp_filter;
+					var_export( $wp_filter['woocommerce_checkout_billing']);
+				?> -->
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
 			</div>
 
