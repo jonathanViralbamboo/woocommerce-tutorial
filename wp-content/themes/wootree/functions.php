@@ -7,7 +7,11 @@ add_theme_support( 'woocommerce' );
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 
+add_action( 'woocommerce_before_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 
 function wpt_excerpt_length( $length ) {
 	return 16;
